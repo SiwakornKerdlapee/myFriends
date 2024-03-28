@@ -47,13 +47,13 @@ let friends = [];
                     break;
                 case 'youngestFriend':
                     let youngest = findYoungestFriend();
-                    let youngestNames = youngest.map(friend => friend.name).join(', ');
-                    resultsDiv.textContent = `Youngest Friend(s): ${youngestNames}`;
+                    let youngestInfo = youngest.map(friend => `${friend.name} (${friend.age})`).join(', ');
+                    resultsDiv.textContent = `Youngest Friend(s): ${youngestInfo}`;
                     break;
                 case 'oldestFriend':
                     let oldest = findOldestFriend();
-                    let oldestNames = oldest.map(friend => friend.name).join(', ');
-                    resultsDiv.textContent = `Oldest Friend(s): ${oldestNames}`;
+                    let oldestInfo = oldest.map(friend => `${friend.name} (${friend.age})`).join(', ');
+                    resultsDiv.textContent = `Oldest Friend(s): ${oldestInfo}`;
                     break;
                 default:
                     resultsDiv.textContent = "Please select a function.";
