@@ -6,7 +6,11 @@ let friends = [];
 
             for (let i = 0; i < numFriends; i++) {
                 const name = prompt(`Enter nickname for friend ${i+1}:`);
-                const age = parseInt(prompt(`Enter age for friend ${i+1}:`));
+                if (!name) {
+                    alert("Please enter the nickname for all friends.");
+                    return;
+                }
+                const age = parseInt(prompt(`Enter age for ${name}:`));
                 friends.push({ name: name, age: age });
             }
             displayResults();
@@ -63,4 +67,5 @@ let friends = [];
         function resetPage() {
             friends = [];
             document.getElementById('results').innerHTML = '';
+            document.getElementById('functionSelect').selectedIndex = 0; // Reset function selection
         }
